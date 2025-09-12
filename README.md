@@ -4,7 +4,7 @@
 
 ## 📌 Descrição
 
-O objetivo deste projeto é [descrever brevemente o propósito do projeto, por exemplo: desenvolver uma aplicação web para gerenciamento de tarefas, criar um sistema de controle de estoque, etc.].
+O objetivo deste projeto é criação de um aplicativo referente ao senai.
 
 ## 🛠️ Tecnologias Utilizadas
 
