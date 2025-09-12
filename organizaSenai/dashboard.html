@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>OrganizaSenai - Painel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+    }
+
+    header {
+      background-color: #1d90d4;
+      color: white;
+      padding: 8px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+    .perfil {
+      margin-right: 20px;
+      font-size: 16px;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .menu-lateral {
+      background-color: #3498db;
+      width: 220px;
+      padding: 20px;
+      color: white;
+      height: calc(100vh - 60px);
+    }
+
+    .menu-lateral ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .menu-lateral li {
+      margin: 20px 0;
+      cursor: pointer;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .menu-lateral li::before {
+      content: "⬇";
+      position: absolute;
+      left: 0;
+    }
+
+    main {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .tarefas, .aulas-semana {
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0, 150, 255, 0.2);
+      border-radius: 10px;
+    }
+
+    .tarefas {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tarefas ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 10px;
+      flex-grow: 1;
+    }
+
+    .tarefas li::before {
+      content: "✔️ ";
+      color: purple;
+    }
+
+    .tarefas input[type="text"] {
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #3498db;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .tarefas button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .aulas-semana {
+      flex: 1;
+      min-width: 700px;
+    }
+
+    .aulas-semana h2 {
+      color: #1d90d4;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .dias-container {
+      display: flex;
+      gap: 15px;
+    }
+
+    .dia {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dia h3 {
+      background-color: #1d90d4;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      border-radius: 8px 8px 0 0;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .materia {
+      background-color: #f0f8ff;
+      border: 1px solid #1d90d4;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+
+    .materia:hover {
+      background-color: #cde7ff;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>OrganizaSenai</h1>
+    <span class="perfil">Perfil do aluno ⚙️</span>
+  </header>
+
+  <div class="container">
+    <aside class="menu-lateral">
+      <ul>
+        <li>Apoio ao estudante</li>
+        <li>Faltas</li>
+        <li>Notas</li>
+        <li>Apostilas</li>
+        <li>Calendário</li>
+        <li>Anotações</li>
+      </ul>
+    </aside>
+
+    <main>
+      <section class="tarefas">
+        <h2>Tarefas</h2>
+        <ul id="lista-tarefas">
+          <!-- Conteúdo inserido por JS -->
+        </ul>
+        <input type="text" id="nova-tarefa" placeholder="Digite uma nova tarefa..." />
+        <button onclick="adicionarTarefa()">Adicionar Tarefa</button>
+      </section>
+
+      <section class="aulas-semana">
+        <h2>Aulas da Semana</h2>
+        <div class="dias-container">
+          <div class="dia" id="segunda">
+            <h3>Segunda</h3>
+            <div class="materia" onclick="verDetalhes('segunda')">Matemática</div>
+            <div class="materia" onclick="verDetalhes('segunda')">Geometria</div>
+            <div class="materia" onclick="verDetalhes('segunda')">Lógica</div>
+          </div>
+          <div class="dia" id="terca">
+            <h3>Terça</h3>
+            <div class="materia" onclick="verDetalhes('terca')">História</div>
+            <div class="materia" onclick="verDetalhes('terca')">Redação</div>
+            <div class="materia" onclick="verDetalhes('terca')">Literatura</div>
+          </div>
+          <div class="dia" id="quarta">
+            <h3>Quarta</h3>
+            <div class="materia" onclick="verDetalhes('quarta')">Programação</div>
+            <div class="materia" onclick="verDetalhes('quarta')">Banco de Dados</div>
+            <div class="materia" onclick="verDetalhes('quarta')">Projeto</div>
+          </div>
+          <div class="dia" id="quinta">
+            <h3>Quinta</h3>
+            <div class="materia" onclick="verDetalhes('quinta')">Química</div>
+            <div class="materia" onclick="verDetalhes('quinta')">Biologia</div>
+            <div class="materia" onclick="verDetalhes('quinta')">Educação Física</div>
+          </div>
+          <div class="dia" id="sexta">
+            <h3>Sexta</h3>
+            <div class="materia" onclick="verDetalhes('sexta')">Física</div>
+            <div class="materia" onclick="verDetalhes('sexta')">Robótica</div>
+            <div class="materia" onclick="verDetalhes('sexta')">Inglês</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const tarefasPorDia = {
+      segunda: ["- Exercício de funções", "- Estudar frações", "- Fórmula de Bhaskara", "- Trigonometria"],
+      terca: ["- Resumo da Revolução Francesa", "- Gramática", "- Produção de texto", "- Clube de leitura"],
+      quarta: ["- Criar um site em HTML", "- Estudar JavaScript", "- Front-end"],
+      quinta: ["- Relatório de experimento", "- Ida ao laboratório", "- Campeonato de Vôlei"],
+      sexta: ["- Revisar leis de Newton", "- Montagem de robô", "- Verbo to be"]
+    };
+
+    function verDetalhes(dia) {
+      const tarefas = tarefasPorDia[dia] || [];
+      alert("Detalhes do dia:\n\n" + tarefas.join("\n"));
+    }
+
+    const lista = document.getElementById("lista-tarefas");
+    const input = document.getElementById("nova-tarefa");
+
+    // Preencher tarefas do dia atual (simulação)
+    const hoje = new Date().getDay(); // 0=Domingo, 1=Segunda...
+    const dias = ["domingo", "segunda", "terca", "quarta", "quinta", "sexta", "sabado"];
+    const hojeNome = dias[hoje];
+    const tarefasHoje = tarefasPorDia[hojeNome] || [];
+
+    if (tarefasHoje.length === 0) {
+      lista.innerHTML = "<li>Sem tarefas hoje 🎉</li>";
+    } else {
+      tarefasHoje.forEach(tarefa => {
+        const li = document.createElement("li");
+        li.textContent = tarefa;
+        lista.appendChild(li);
+      });
+    }
+
+    function adicionarTarefa() {
+      const valor = input.value.trim();
+      if (valor) {
+        const li = document.createElement("li");
+        li.textContent = valor;
+        lista.appendChild(li);
+        input.value = "";
+      }
+    }
+  </script>
+</body>
+</html>
