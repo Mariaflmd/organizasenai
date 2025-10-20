@@ -1,0 +1,179 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(219, 216, 216);
+}
+
+header {
+  background-color: #1d90d4;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.perfil {
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+}
+
+.menu-lateral {
+  background-color: #3498db;
+  width: 220px;
+  padding: 20px;
+  color: white;
+  height: calc(100vh - 60px);
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-lateral li {
+  margin: 18px 0;
+  cursor: pointer;
+  padding-left: 15px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.menu-lateral li::before {
+  content: "⬇";
+  position: absolute;
+  left: 0;
+}
+
+.menu-lateral li:hover {
+  transform: translateX(4px);
+  opacity: 0.9;
+}
+
+main {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ====== CARD DE TAREFAS ====== */
+.tarefas {
+  background: rgb(230, 228, 228);
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 0 20px rgba(0, 150, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.tarefas h2 {
+  color: #1d90d4;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.tarefas ul {
+  list-style: none;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.tarefas li::before {
+  content: "✔️ ";
+  color: #1d90d4;
+}
+
+.tarefas input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #3498db;
+  border-radius: 4px;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tarefas button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 8px;
+  transition: 0.3s;
+}
+
+.tarefas button:hover {
+  background-color: #217dbb;
+}
+
+/* ====== AULAS ====== */
+.aulas-semana {
+  flex: 1;
+  min-width: 700px;
+  background: rgb(230, 228, 228);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 150, 255, 0.15);
+}
+
+.aulas-semana h2 {
+  color: #1d90d4;
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.dias-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.dia {
+  flex: 1;
+  min-width: 150px;
+}
+
+.dia h3 {
+  background-color: #1d90d4;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 8px 8px 0 0;
+  font-size: 18px;
+  margin: 0;
+}
+
+.materia {
+  background-color: #f0f8ff;
+  border: 1px solid #1d90d4;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.materia:hover {
+  background-color: #cde7ff;
+}

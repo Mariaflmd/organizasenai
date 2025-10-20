@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OrganizaSenai - Painel</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header>
+    <h1>OrganizaSenai</h1>
+    <span class="perfil">Perfil do aluno ⚙️</span>
+  </header>
+
+  <div class="container">
+    <aside class="menu-lateral">
+      <ul>
+        <li>Apoio ao estudante</li>
+        <li>Faltas</li>
+        <li>Notas</li>
+        <li>Apostilas</li>
+        <li>Calendário</li>
+        <li>Anotações</li>
+      </ul>
+    </aside>
+
+    <main>
+      <section class="tarefas">
+        <h2>Tarefas</h2>
+        <ul id="lista-tarefas"></ul>
+        <input type="text" id="nova-tarefa" placeholder="Digite uma nova tarefa...">
+        <button id="btn-adicionar">Adicionar Tarefa</button>
+      </section>
+
+      <section class="aulas-semana">
+        <h2>Aulas da Semana</h2>
+        <div class="dias-container">
+          <div class="dia" id="segunda">
+            <h3>Segunda</h3>
+            <div class="materia" onclick="verDetalhes('segunda')">Matemática</div>
+            <div class="materia" onclick="verDetalhes('segunda')">Geometria</div>
+            <div class="materia" onclick="verDetalhes('segunda')">Lógica</div>
+          </div>
+          <div class="dia" id="terca">
+            <h3>Terça</h3>
+            <div class="materia" onclick="verDetalhes('terca')">História</div>
+            <div class="materia" onclick="verDetalhes('terca')">Redação</div>
+            <div class="materia" onclick="verDetalhes('terca')">Literatura</div>
+          </div>
+          <div class="dia" id="quarta">
+            <h3>Quarta</h3>
+            <div class="materia" onclick="verDetalhes('quarta')">Programação</div>
+            <div class="materia" onclick="verDetalhes('quarta')">Banco de Dados</div>
+            <div class="materia" onclick="verDetalhes('quarta')">Projeto</div>
+          </div>
+          <div class="dia" id="quinta">
+            <h3>Quinta</h3>
+            <div class="materia" onclick="verDetalhes('quinta')">Química</div>
+            <div class="materia" onclick="verDetalhes('quinta')">Biologia</div>
+            <div class="materia" onclick="verDetalhes('quinta')">Educação Física</div>
+          </div>
+          <div class="dia" id="sexta">
+            <h3>Sexta</h3>
+            <div class="materia" onclick="verDetalhes('sexta')">Física</div>
+            <div class="materia" onclick="verDetalhes('sexta')">Robótica</div>
+            <div class="materia" onclick="verDetalhes('sexta')">Inglês</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
