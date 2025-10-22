@@ -60,16 +60,21 @@ header h1 {
   opacity: 0.9;
 }
 
+/* ====== CONTEÚDO PRINCIPAL ====== */
 main {
   flex: 1;
   padding: 40px;
-  display: flex;
-  gap: 50px;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
-/* ====== CARD DE TAREFAS ====== */
+.painel-conteudo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* ====== TAREFAS ====== */
 .tarefas {
   background: rgb(230, 228, 228);
   padding: 20px;
@@ -78,6 +83,7 @@ main {
   box-shadow: 0 0 20px rgba(0, 150, 255, 0.15);
   display: flex;
   flex-direction: column;
+  height: fit-content;
 }
 
 .tarefas h2 {
@@ -89,7 +95,6 @@ main {
 .tarefas ul {
   list-style: none;
   padding: 0;
-  flex-grow: 1;
 }
 
 .tarefas li::before {
@@ -123,8 +128,8 @@ main {
   background-color: #217dbb;
 }
 
-/* ====== AULAS ====== */
-.aulas-semana {
+/* ====== AULAS + GRADE ====== */
+.aulas-container {
   flex: 1;
   min-width: 700px;
   background: rgb(230, 228, 228);
@@ -133,17 +138,17 @@ main {
   box-shadow: 0 0 20px rgba(0, 150, 255, 0.15);
 }
 
-.aulas-semana h2 {
+.aulas-container h2 {
   color: #1d90d4;
-  font-size: 26px;
-  margin-bottom: 20px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .dias-container {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .dia {
@@ -177,3 +182,18 @@ main {
 .materia:hover {
   background-color: #cde7ff;
 }
+
+/* ====== GRADE FIXA ====== */
+.grade-fixa {
+  margin-top: 40px;
+  border-top: 2px solid #1d90d4;
+  padding-top: 20px;
+}
+
+.grade-fixa h2 {
+  color: #1d90d4;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
